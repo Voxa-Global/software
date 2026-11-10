@@ -4,25 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <a href="index.html" class="">Logo</a>
+    <header class="">
+      <nav>
+        <div class="">
+          <a href="index.html" class="logo">
+            <img src="./logo.png" alt="Logo" width="150px" class="" />
+          </a>
+        </div>
 
-      <form action="">
-        <input type="text" placeholder="Search..." />
-      </form>
+        <div>
+          <form action="">
+            <input type="text" placeholder="Search..." />
+          </form>
+        </div>
 
-      <ul>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="settings.html">Settings</a></li>
-      </ul>
-    </nav>
+        <div class="">
+          <ul>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <main class="">
-      <div class="container">
-        <div class="img"></div>
-        <div class="">
+      <div class="container border-bottom">
+        <div class="img">
+          <img src="./BARISTA.png" alt="Barista" class="" width="200px" />
+        </div>
+
+        <div class="left">
           <h1 class="">Join Us Today!</h1>
           <p class="">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque
@@ -30,8 +44,10 @@
             distinctio, soluta expedita?
           </p>
 
-          <button class="">Learn More</button>
-          <button class="">Get Started</button>
+          <div class="">
+            <button class="btn btn-primary">Learn More</button>
+            <button class="btn btn-secondary">Get Started</button>
+          </div>
         </div>
       </div>
 
