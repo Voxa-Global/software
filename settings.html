@@ -3,9 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings</title>
+    <meta name="theme-color" content="#1a3774" />
+    <title>Settings | Voxa Global</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1 class="">Settings</h1>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="logo" aria-label="Voxa Global home">
+          <img src="./logo.png" alt="Voxa Global" width="150" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-content">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-content" id="nav-content">
+          <form class="header-search" role="search" action="index.html">
+            <label class="sr-only" for="site-search">Search</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." />
+          </form>
+          <ul class="nav-links">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="settings.html" aria-current="page">Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell settings-shell">
+      <section class="page-heading">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h1>Settings</h1>
+        <p>Choose how Voxa Global looks and how you’d like to hear from us.</p>
+      </section>
+
+      <form id="settings-form" class="settings-content">
+        <section class="panel settings-section" aria-labelledby="appearance-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="appearance-title">Appearance</h2>
+              <p>Choose the theme that feels right for you.</p>
+            </div>
+          </div>
+          <label class="setting-row" for="theme-select">
+            <span class="setting-copy">
+              <strong>Color theme</strong>
+              <span>Use a light or dark appearance across the site.</span>
+            </span>
+            <select id="theme-select" name="theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="panel settings-section" aria-labelledby="notifications-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="notifications-title">Notifications</h2>
+              <p>Control the updates you receive from Voxa Global.</p>
+            </div>
+          </div>
+          <label class="setting-row" for="email-updates">
+            <span class="setting-copy">
+              <strong>Email updates</strong>
+              <span>Get important account and learning updates by email.</span>
+            </span>
+            <span class="switch">
+              <input id="email-updates" name="emailUpdates" type="checkbox" />
+              <span class="switch-track" aria-hidden="true"></span>
+            </span>
+          </label>
+          <label class="setting-row" for="learning-tips">
+            <span class="setting-copy">
+              <strong>Learning tips</strong>
+              <span>Receive occasional tips, news, and learning inspiration.</span>
+            </span>
+            <span class="switch">
+              <input id="learning-tips" name="learningTips" type="checkbox" />
+              <span class="switch-track" aria-hidden="true"></span>
+            </span>
+          </label>
+        </section>
+
+        <section class="panel settings-section" aria-labelledby="language-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="language-title">Language</h2>
+              <p>Set your preferred language for future updates.</p>
+            </div>
+          </div>
+          <label class="setting-row" for="language-select">
+            <span class="setting-copy">
+              <strong>Display language</strong>
+              <span>This preference is saved on this device.</span>
+            </span>
+            <select id="language-select" name="language">
+              <option value="en">English</option>
+              <option value="rw">Kinyarwanda</option>
+              <option value="fr">Français</option>
+            </select>
+          </label>
+        </section>
+
+        <div class="form-actions settings-actions">
+          <button class="btn btn-primary" type="submit">Save preferences</button>
+          <span class="save-status" id="settings-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-brand">Voxa Global</a>
+        <p>Learning, growing, and building a brighter future together.</p>
+        <div class="footer-links">
+          <a href="profile.html">Profile</a>
+          <a href="settings.html">Settings</a>
+          <a href="mailto:voxagloballtd@gmail.com">Contact</a>
+        </div>
+        <small>&copy; <span data-current-year></span> Voxa Global. All rights reserved.</small>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

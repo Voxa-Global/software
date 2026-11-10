@@ -3,9 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <meta name="theme-color" content="#1a3774" />
+    <title>Your Profile | Voxa Global</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1 class="">Profile</h1>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="logo" aria-label="Voxa Global home">
+          <img src="./logo.png" alt="Voxa Global" width="150" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-content">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-content" id="nav-content">
+          <form class="header-search" role="search" action="index.html">
+            <label class="sr-only" for="site-search">Search</label>
+            <input id="site-search" type="search" name="q" placeholder="Search..." />
+          </form>
+          <ul class="nav-links">
+            <li><a href="profile.html" aria-current="page">Profile</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-heading">
+        <p class="eyebrow">YOUR ACCOUNT</p>
+        <h1>Profile</h1>
+        <p>Manage the personal information connected to your Voxa Global account.</p>
+      </section>
+
+      <div class="profile-layout">
+        <aside class="profile-summary panel">
+          <img class="profile-avatar" src="./profile.jpeg" alt="Your profile" data-profile-avatar />
+          <h2 data-profile-name>Voxa Learner</h2>
+          <p data-profile-email>learner@example.com</p>
+          <span class="member-badge">Voxa Global learner</span>
+          <div class="summary-divider"></div>
+          <p class="summary-note">Keep your details up to date so we can make your learning experience more personal.</p>
+        </aside>
+
+        <section class="panel profile-details" aria-labelledby="profile-details-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="profile-details-title">Personal details</h2>
+              <p>Only you can see and update this information.</p>
+            </div>
+          </div>
+          <form id="profile-form" class="form-grid">
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" value="Voxa Learner" required maxlength="80" />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" value="learner@example.com" required maxlength="120" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span class="optional">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+250 7XX XXX XXX" maxlength="30" />
+            </div>
+            <div class="field">
+              <label for="location">Location <span class="optional">(optional)</span></label>
+              <input id="location" name="location" type="text" autocomplete="address-level2" placeholder="City, country" maxlength="80" />
+            </div>
+            <div class="field field-full">
+              <label for="bio">About you <span class="optional">(optional)</span></label>
+              <textarea id="bio" name="bio" rows="4" maxlength="240" placeholder="Tell us a little about yourself..."></textarea>
+              <span class="field-hint"><span id="bio-count">0</span>/240 characters</span>
+            </div>
+            <div class="field field-full avatar-field">
+              <label for="avatar-upload">Profile photo</label>
+              <div class="avatar-upload-row">
+                <input id="avatar-upload" name="avatar" type="file" accept="image/*" />
+                <span class="field-hint">Choose an image to preview it on this page.</span>
+              </div>
+            </div>
+            <div class="form-actions field-full">
+              <button class="btn btn-primary" type="submit">Save changes</button>
+              <span class="save-status" id="profile-status" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-brand">Voxa Global</a>
+        <p>Learning, growing, and building a brighter future together.</p>
+        <div class="footer-links">
+          <a href="profile.html">Profile</a>
+          <a href="settings.html">Settings</a>
+          <a href="mailto:voxagloballtd@gmail.com">Contact</a>
+        </div>
+        <small>&copy; <span data-current-year></span> Voxa Global. All rights reserved.</small>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>
 </html>
